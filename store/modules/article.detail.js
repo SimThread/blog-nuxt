@@ -7,8 +7,6 @@ const state = {
 // actions
 const actions = {
   getArticleDetail({ commit }, id, user) {
-    console.log('id:', id)
-    console.log('user:', user)
     return new Promise((resolve, reject) => {
       api.getFrontArticle(id).then(response => {
         if (response.ok) {

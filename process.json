@@ -2,14 +2,14 @@
   "apps": [
     {
       "name"              : "nuxt-server",
-      "script"            : "./.nuxt/server.js",
+      "script": "./node_modules/nuxt/bin/nuxt.js",
       "log_date_format"   : "YYYY-MM-DD HH:mm Z",
       "out_file"          : "./logs/pm2-out.log",
       "error_file"        : "./logs/pm2-err.log",
       "pid_file"          : "./logs/nuxt-server.pid",
       "ignoreWatch"       : ["[\\/\\\\]\\./", "node_modules"],
       "watch"             : "false",
-      "exec_mode"         : "fork_mode", //cluster_mode
+      "exec_mode"         : "fork_mode",
       "env": {
         "NODE_ENV"        : "production"
       }

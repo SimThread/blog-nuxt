@@ -52,8 +52,6 @@ export default {
   async fetch({ store, params }) {
     const aid = params.aid
 
-    console.log('aid:', aid)
-
     let result = await Promise.all([
       store.dispatch('getPrenext', aid),
       store.dispatch('getCommentList', aid),
