@@ -26,12 +26,10 @@ module.exports = {
   */
   css: [
     'font-awesome/css/font-awesome.css',
-    'bootstrap/dist/css/bootstrap.css',
     'jackblog-sass/dist/index.css',
     '~/assets/scss/index.css',
     'vue-toast/dist/vue-toast.min.css',
-    '~/assets/styles/index.css',
-    'bootstrap-vue/dist/bootstrap-vue.css'
+    '~/assets/styles/index.css'
   ],
 
   /*
@@ -48,7 +46,7 @@ module.exports = {
     },
     {
       src: '~/plugins/bootstrap.js',
-      ssr: true
+      ssr: false
     }
   ],
   router: {

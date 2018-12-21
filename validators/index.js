@@ -9,11 +9,11 @@ Validator.extend('nickname', {
 
 const config = {
   errorBagName: 'errors', // change if property conflicts.
-  fieldsBagName: 'fields', 
-  delay: 0, 
-  locale: 'en', 
-  dictionary: null, 
-  strict: true, 
+  fieldsBagName: 'fields',
+  delay: 0,
+  locale: 'en',
+  dictionary: null,
+  strict: true,
   enableAutoClasses: true,
   classNames: {
     touched: 'touched', // the control has been blurred
@@ -24,6 +24,6 @@ const config = {
     dirty: 'ng-dirty' // control has been interacted with
   },
   events: 'input|blur',
-  inject: true  
+  inject: true
 }
-Vue.use(VeeValidate,config)
+Vue.use(VeeValidate, config)
