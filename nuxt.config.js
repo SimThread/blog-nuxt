@@ -94,6 +94,8 @@ module.exports = {
     }
   },
 
+  vendor: ['axios'],
+
   /*
   ** Nuxt.js modules
   */

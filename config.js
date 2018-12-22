@@ -8,8 +8,8 @@
 
 export const API_ROOT =
   process.env.NODE_ENV === 'production'
-    ? 'http://api.dot2thread.com/'
-    : 'http://localhost:9000/'
+    ? '//api.dot2thread.com/'
+    : '//localhost:9000/'
 
 export const CookieDomain =
   process.env.NODE_ENV === 'production' ? '.dot2thread.com' : ''
