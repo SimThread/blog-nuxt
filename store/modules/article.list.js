@@ -1,4 +1,5 @@
 import api from '../../api'
+import service from '@/services/index'
 import {
   ARTICLE_LIST,
   ADD_ARTICLE_LIST,
@@ -15,9 +16,9 @@ const state = {
 const actions = {
   getArticleList({ commit }, { options, isAdd = false }) {
     commit(REQUEST_ARTICLE_LIST)
-    api.getFrontArticleList(options).then(
+    service.getFrontArticleList(options).then(
       response => {
-        if (!response.ok) {
+        if (response.statusText != 'OK') {
           return commit(GET_ARTICLE_LIST_FAILURE)
         }
         const json = response.data

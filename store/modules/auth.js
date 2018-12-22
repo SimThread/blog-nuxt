@@ -1,4 +1,5 @@
 import api from '../../api'
+import service from '@/services/index'
 import { showMsg, getCaptchaUrl } from '../actions'
 import {
   LOGIN_SUCCESS,
@@ -22,9 +23,9 @@ const actions = {
     window.location.pathname = '/'
   },
   localLogin(store, userInfo) {
-    api.localLogin(userInfo).then(
+    service.localLogin(userInfo).then(
       response => {
-        if (!response.ok) {
+        if (response.statusText != 'OK') {
           getCaptchaUrl(store)
           return showMsg(store, response.data.error_msg || '登录失败')
         }
@@ -42,9 +43,9 @@ const actions = {
     )
   },
   getUserInfo({ commit }) {
-    api.getMe().then(
+    service.getMe().then(
       response => {
-        if (!response.ok) {
+        if (response.statusText != 'OK') {
           return commit(USERINFO_FAILURE)
         }
         commit(USERINFO_SUCCESS, { user: response.data })
@@ -55,9 +56,9 @@ const actions = {
     )
   },
   updateUser(store, userInfo) {
-    api.mdUser(userInfo).then(
+    service.mdUser(userInfo).then(
       response => {
-        if (!response.ok) {
+        if (response.statusText != 'OK') {
           return showMsg(store, '更新用户资料失败!')
         }
         store.commit(UPDATE_USER_SUCCESS, { user: response.data.data })

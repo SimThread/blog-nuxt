@@ -1,5 +1,6 @@
 import api from '../api'
 import * as types from './types'
+import service from '@/services/index'
 // import img from '../assets/images/bg.jpg'
 
 export const showMsg = ({ commit }, content, type = 'error') => {
@@ -19,9 +20,9 @@ export const getCaptchaUrl = ({ commit }) => {
 }
 
 export const getIndexImage = ({ commit }) => {
-  api.getIndexImage().then(
+  service.getIndexImage().then(
     response => {
-      if (!response.ok) {
+      if (response.statusText != 'OK') {
         // return commit(types.GET_INDEX_IMG, {indexImg: img})
       }
       commit(types.GET_INDEX_IMG, { indexImg: response.data.img })

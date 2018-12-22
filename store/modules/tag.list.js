@@ -1,4 +1,5 @@
 import api from '../../api'
+import service from '@/services/index.js'
 import { GET_TAG_LIST_SUCCESS, GET_TAG_LIST_FAILURE } from '../types'
 
 const state = {
@@ -7,9 +8,10 @@ const state = {
 
 const actions = {
   getTagList({ commit }) {
-    api.getTagList().then(
+    service.getTagList().then(
       response => {
-        if (!response.ok) {
+        console.log('response:', response)
+        if (!response.statusText == 'OK') {
           return commit(GET_TAG_LIST_FAILURE)
         }
         commit(GET_TAG_LIST_SUCCESS, { tagList: response.data.data })

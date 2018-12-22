@@ -113,14 +113,15 @@ export default {
     ...mapActions(['getSnsLogins', 'getCaptchaUrl', 'localLogin']),
     login() {
       this.$validator
-        .validateAll()
+        .validateAll({})
         .then(result => {
           if (result) {
             this.localLogin(this.user)
           }
         })
-        .catch(() => {
+        .catch(error => {
           //提示错误
+          console.log('error:', error)
         })
     }
   }

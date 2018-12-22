@@ -1,4 +1,5 @@
 import api from '../../api'
+import service from '@/services/index'
 import { showMsg } from '../actions'
 import {
   COMMENT_LIST,
@@ -15,9 +16,9 @@ const state = {
 const actions = {
   getCommentList({ commit }, id) {
     return new Promise((resolve, reject) => {
-      api.getFrontCommentList(id).then(
+      service.getFrontCommentList(id).then(
         response => {
-          if (!response.ok) {
+          if (response.statusText != 'OK') {
             commit(GET_COMMENT_LIST_FAILURE)
             return reject()
           }
@@ -35,9 +36,9 @@ const actions = {
     })
   },
   addComment(store, data) {
-    api.addNewComment(data).then(
+    service.addNewComment(data).then(
       response => {
-        if (!response.ok) {
+        if (response.statusText != 'OK') {
           return showMsg(store, response.data.error_msg || '添加评论失败!')
         }
         showMsg(store, '添加评论成功!', 'success')
@@ -49,9 +50,9 @@ const actions = {
     )
   },
   addReply(store, { cid, data }) {
-    api.addNewReply(cid, data).then(
+    service.addNewReply(cid, data).then(
       response => {
-        if (!response.ok) {
+        if (response.statusText != 'OK') {
           return showMsg(store, response.data.error_msg || '添加回复失败!')
         }
         showMsg(store, '添加回复成功!', 'success')

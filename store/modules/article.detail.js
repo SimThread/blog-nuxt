@@ -1,4 +1,5 @@
 import api from '../../api'
+import service from '@/services'
 import { ARTICLE_DETAIL, TOGGLE_LIKE } from '../types'
 
 const state = {
@@ -8,8 +9,8 @@ const state = {
 const actions = {
   getArticleDetail({ commit }, id, user) {
     return new Promise((resolve, reject) => {
-      api.getFrontArticle(id).then(response => {
-        if (response.ok) {
+      service.getFrontArticle(id).then(response => {
+        if (response.statusText == 'OK') {
           let isLike = false
           const article = response.data.data
           if (user) {
@@ -32,9 +33,9 @@ const actions = {
     })
   },
   toggleLike({ commit }, id) {
-    api.toggleLike(id).then(response => {
+    service.toggleLike(id).then(response => {
       const json = response.data
-      if (response.ok) {
+      if (response.statusText == 'OK') {
         commit(TOGGLE_LIKE, {
           like_count: json.count,
           isLike: json.isLike

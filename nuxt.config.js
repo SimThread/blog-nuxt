@@ -37,6 +37,14 @@ module.exports = {
   */
   plugins: [
     {
+      src: '~/plugins/axios.js',
+      ssr: true
+    },
+    {
+      src: '~/plugins/axios-port.js',
+      ssr: true
+    },
+    {
       src: '~/plugins/validators.js',
       ssr: true
     },
@@ -102,13 +110,58 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt'
+  ],
+  proxy: [
+    [
+      '/tags',
+      {
+        target: 'http://localhost:9000'
+      }
+    ],
+    [
+      '/auth',
+      {
+        target: 'http://localhost:9000'
+      }
+    ],
+    [
+      '/users',
+      {
+        target: 'http://localhost:9000'
+      }
+    ],
+    [
+      '/mobile',
+      {
+        target: 'http://localhost:9000'
+      }
+    ],
+    [
+      '/frontArticle',
+      {
+        target: 'http://localhost:9000',
+        pathRewrite: {
+          '^/frontArticle': '/article'
+        }
+      }
+    ],
+    [
+      '/comment',
+      {
+        target: 'http://localhost:9000'
+      }
+    ]
   ],
   /*
   ** Axios module configuration
   */
   axios: {
+    // baseUrl: 'http://localhost:9000',
+    credentials: true
+    // proxy: true
     // See https://github.com/nuxt-community/axios-module#options
   },
 

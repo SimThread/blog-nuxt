@@ -137,10 +137,9 @@ export default {
       return defaultAvatar
     }
   },
-  created() {
-    if (!this.$isServer) {
-      document.body.className = this.styleMode
-    }
+  mounted() {
+    document.body.className = this.styleMode
+
     if (this.auth.token) {
       this.getUserInfo()
     }
@@ -149,9 +148,7 @@ export default {
     ...mapActions(['changeStyleMode', 'logout', 'getUserInfo']),
     changeMode() {
       this.changeStyleMode()
-      if (!this.$isServer) {
-        document.body.className = this.styleMode
-      }
+      document.body.className = this.styleMode
     },
     dropdown() {
       const dropdownMenu = document.getElementById('dropdownMenu')

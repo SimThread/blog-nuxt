@@ -1,4 +1,5 @@
 import api from '../../api'
+import service from '@/services/index'
 import { PRENEXT_ARTICLE } from '../types'
 
 const state = {
@@ -9,8 +10,8 @@ const state = {
 const actions = {
   getPrenext({ commit, rootState }, id) {
     return new Promise((resolve, reject) => {
-      return api.getPrenext(id, rootState.options.item).then(response => {
-        if (response.ok) {
+      return service.getPrenext(id, rootState.options.item).then(response => {
+        if (response.statusText == 'OK') {
           commit(PRENEXT_ARTICLE, {
             prenextArticle: response.data.data
           })
