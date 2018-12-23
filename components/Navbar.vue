@@ -137,8 +137,8 @@ export default {
       return defaultAvatar
     }
   },
-  mounted() {
-    document.body.className = this.styleMode
+  created() {
+    // document.body.className = this.styleMode
 
     if (this.auth.token) {
       this.getUserInfo()

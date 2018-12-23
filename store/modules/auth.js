@@ -6,10 +6,10 @@ import {
   USERINFO_SUCCESS,
   USERINFO_FAILURE,
   LOGOUT_USER,
-  UPDATE_USER_SUCCESS
+  UPDATE_USER_SUCCESS,
+  UPDATE_TOKEN
 } from '../types'
 import { getCookie, saveCookie, signOut } from '../../utils/authService'
-// import router from '../../router'
 
 const state = {
   token: getCookie('token') || null,
@@ -34,7 +34,7 @@ const actions = {
         store.dispatch('getUserInfo')
         store.commit(LOGIN_SUCCESS, { token: token })
         showMsg(store, '登录成功,欢迎光临!', 'success')
-        // router.push({ path: '/' })
+        this.$router.push({ path: '/' })
       },
       response => {
         getCaptchaUrl(store)
@@ -88,6 +88,10 @@ const mutations = {
   },
   [UPDATE_USER_SUCCESS](state, action) {
     state.user = action.user
+  },
+  [UPDATE_TOKEN](state, action) {
+    console.log('更新token:', action)
+    state.token = action.token
   }
 }
 

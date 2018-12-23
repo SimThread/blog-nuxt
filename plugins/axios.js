@@ -16,7 +16,7 @@ export default function({ app, req, store, route, redirect }) {
     // if (config.method.toUpperCase() == 'GET' && config.data) {
     //   config.url += `?${config.data}`
     // }
-    console.log('config:', config)
+    // console.log('config:', config)
     return config
 
     // if (store.state.im.uuid){

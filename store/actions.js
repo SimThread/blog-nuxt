@@ -1,7 +1,16 @@
 import api from '../api'
 import * as types from './types'
 import service from '@/services/index'
+import cookieUtils from '@/utils/cookieUtils'
 // import img from '../assets/images/bg.jpg'
+
+export const nuxtServerInit = ({ state, commit }, { req }) => {
+  const token = cookieUtils.getCookies(req.headers.cookie)['token'] || null
+
+  commit(types.UPDATE_TOKEN, {
+    token
+  })
+}
 
 export const showMsg = ({ commit }, content, type = 'error') => {
   commit(types.SHOW_MSG, { content: content, type: type })

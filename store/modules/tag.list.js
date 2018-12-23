@@ -10,7 +10,6 @@ const actions = {
   getTagList({ commit }) {
     service.getTagList().then(
       response => {
-        console.log('response:', response)
         if (!response.statusText == 'OK') {
           return commit(GET_TAG_LIST_FAILURE)
         }
