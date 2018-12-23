@@ -5,7 +5,7 @@ import { getCookie, saveCookie } from '../../utils/authService'
 const state = {
   indexImg: '',
   styleMode: getCookie('styleMode') || 'day-mode',
-  captchaUrl: API_ROOT + 'users/getCaptcha?'
+  captchaUrl: API_ROOT + '/users/getCaptcha?'
 }
 
 const mutations = {
@@ -17,7 +17,7 @@ const mutations = {
     state.indexImg = action.indexImg
   },
   [GET_CAPTCHAURL](state) {
-    state.captchaUrl = API_ROOT + 'users/getCaptcha?' + Math.random()
+    state.captchaUrl = API_ROOT + '/users/getCaptcha?' + Math.random()
   }
 }
 

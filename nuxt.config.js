@@ -116,42 +116,12 @@ module.exports = {
   ],
   proxy: [
     [
-      '/tags',
-      {
-        target: 'http://localhost:9000'
-      }
-    ],
-    [
-      '/auth',
-      {
-        target: 'http://localhost:9000'
-      }
-    ],
-    [
-      '/users',
-      {
-        target: 'http://localhost:9000'
-      }
-    ],
-    [
-      '/mobile',
-      {
-        target: 'http://localhost:9000'
-      }
-    ],
-    [
-      '/frontArticle',
+      '/api',
       {
         target: 'http://localhost:9000',
         pathRewrite: {
-          '^/frontArticle': '/article'
+          '^/api': ''
         }
-      }
-    ],
-    [
-      '/comment',
-      {
-        target: 'http://localhost:9000'
       }
     ]
   ],

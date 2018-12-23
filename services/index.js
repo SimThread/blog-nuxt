@@ -18,27 +18,27 @@ export default {
     return apiClient.get(`${API_ROOT}/tags/getFrontTagList`)
   },
   getIndexImage() {
-    return apiClient.get(`${API_ROOT}/frontArticle/getIndexImage`)
+    return apiClient.get(`${API_ROOT}/article/getIndexImage`)
   },
   getApps() {
     return apiClient.get(`${API_ROOT}/mobile/getApps`)
   },
   getFrontArticleList(options) {
-    return apiClient.get(`${API_ROOT}/frontArticle/getFrontArticleList`, {
+    return apiClient.get(`${API_ROOT}/article/getFrontArticleList`, {
       params: options
     })
   },
   getFrontArticleCount() {
-    return apiClient.get(`${API_ROOT}/frontArticle/getFrontArticleCount`)
+    return apiClient.get(`${API_ROOT}/article/getFrontArticleCount`)
   },
   getFrontArticle(id) {
-    return apiClient.get(`${API_ROOT}/frontArticle/${id}/getFrontArticle`)
+    return apiClient.get(`${API_ROOT}/article/${id}/getFrontArticle`)
   },
   toggleLike() {
-    return apiClient.put(`${API_ROOT}/frontArticle/toggleLike`)
+    return apiClient.put(`${API_ROOT}/article/toggleLike`)
   },
   getPrenext(id, options) {
-    return apiClient.get(`${API_ROOT}/frontArticle/${id}/getPrenext`, {
+    return apiClient.get(`${API_ROOT}/article/${id}/getPrenext`, {
       params: options
     })
   },
