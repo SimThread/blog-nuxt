@@ -22,12 +22,12 @@
 export default {
   props: {
     replys: {
-      type: Object,
-      default: () => {}
+      type: Array,
+      default: () => []
     },
     k: {
-      type: String,
-      default: () => ''
+      type: Number,
+      default: () => 0
     }
   },
   methods: {

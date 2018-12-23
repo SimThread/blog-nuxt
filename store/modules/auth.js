@@ -90,7 +90,6 @@ const mutations = {
     state.user = action.user
   },
   [UPDATE_TOKEN](state, action) {
-    console.log('更新token:', action)
     state.token = action.token
   }
 }
