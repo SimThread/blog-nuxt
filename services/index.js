@@ -1,59 +1,60 @@
 import apiClient from '~/services/apiClient'
+import { API_ROOT } from '@/config.js'
 
 export default {
-  async localLogin(userInfo) {
-    return apiClient.post('/auth/local', userInfo)
+  localLogin(userInfo) {
+    return apiClient.post(`${API_ROOT}/auth/local`, userInfo)
   },
-  async getSnsLogins() {
-    return apiClient.get('/users/snsLogins')
+  getSnsLogins() {
+    return apiClient.get(`${API_ROOT}/users/snsLogins`)
   },
-  async getMe() {
-    return apiClient.get('/users/me')
+  getMe() {
+    return apiClient.get(`${API_ROOT}/users/me`)
   },
-  async mdUser(userInfo) {
-    return apiClient.put('/users/mdUser', userInfo)
+  mdUser(userInfo) {
+    return apiClient.put(`${API_ROOT}/users/mdUser`, userInfo)
   },
-  async getTagList() {
-    return apiClient.get('/tags/getFrontTagList')
+  getTagList() {
+    return apiClient.get(`${API_ROOT}/tags/getFrontTagList`)
   },
-  async getIndexImage() {
-    return apiClient.get('/frontArticle/getIndexImage')
+  getIndexImage() {
+    return apiClient.get(`${API_ROOT}/frontArticle/getIndexImage`)
   },
-  async getApps() {
-    return apiClient.get('/mobile/getApps')
+  getApps() {
+    return apiClient.get(`${API_ROOT}/mobile/getApps`)
   },
-  async getFrontArticleList(options) {
-    return apiClient.get('/frontArticle/getFrontArticleList', {
+  getFrontArticleList(options) {
+    return apiClient.get(`${API_ROOT}/frontArticle/getFrontArticleList`, {
       params: options
     })
   },
-  async getFrontArticleCount() {
-    return apiClient.get('/frontArticle/getFrontArticleCount')
+  getFrontArticleCount() {
+    return apiClient.get(`${API_ROOT}/frontArticle/getFrontArticleCount`)
   },
-  async getFrontArticle(id) {
-    return apiClient.get(`/frontArticle/${id}/getFrontArticle`)
+  getFrontArticle(id) {
+    return apiClient.get(`${API_ROOT}/frontArticle/${id}/getFrontArticle`)
   },
-  async toggleLike() {
-    return apiClient.put('/frontArticle/toggleLike')
+  toggleLike() {
+    return apiClient.put(`${API_ROOT}/frontArticle/toggleLike`)
   },
-  async getPrenext(id, options) {
-    return apiClient.get(`/frontArticle/${id}/getPrenext`, {
+  getPrenext(id, options) {
+    return apiClient.get(`${API_ROOT}/frontArticle/${id}/getPrenext`, {
       params: options
     })
   },
-  async getFrontCommentList(id) {
-    return apiClient.get(`/comment/${id}/getFrontCommentList`)
+  getFrontCommentList(id) {
+    return apiClient.get(`${API_ROOT}/comment/${id}/getFrontCommentList`)
   },
-  async addNewComment(data) {
-    return apiClient.post('/comment/addNewComment', data)
+  addNewComment(data) {
+    return apiClient.post(`${API_ROOT}/comment/addNewComment`, data)
   },
-  async addNewReply(id, data) {
-    return apiClient.post(`/comment/${id}/addNewReply`, data)
+  addNewReply(id, data) {
+    return apiClient.post(`${API_ROOT}/comment/${id}/addNewReply`, data)
   },
-  async delComment(id) {
-    return apiClient.delete(`/comment/${id}`)
+  delComment(id) {
+    return apiClient.delete(`${API_ROOT}/comment/${id}`)
   },
-  async delReply(id, data) {
-    return apiClient.put(`/comment/${id}/delReply`, data)
+  delReply(id, data) {
+    return apiClient.put(`${API_ROOT}/comment/${id}/delReply`, data)
   }
 }
