@@ -18,13 +18,11 @@ const actions = {
     return new Promise((resolve, reject) => {
       service.getFrontCommentList(id).then(
         response => {
-          if (response.statusText != 'OK') {
-            commit(GET_COMMENT_LIST_FAILURE)
-            return reject()
-          }
           commit(COMMENT_LIST, {
             commentList: response.data.data
           })
+
+          console.log('getCommentList response:', response)
 
           return resolve()
         },

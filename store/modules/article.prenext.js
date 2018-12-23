@@ -18,6 +18,8 @@ const actions = {
           return resolve()
         }
 
+        console.log('get Prenext:', response)
+
         return reject()
       })
     })

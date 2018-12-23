@@ -43,20 +43,25 @@ export default {
       aid: ({ route }) => route.params.aid
     })
   },
-  watch: {
-    $route: 'initData'
-  },
+  // watch: {
+  //   $route: 'initData'
+  // },
   // created() {
   //   this.initData()
   // },
   async fetch({ store, params }) {
     const aid = params.aid
 
-    let result = await Promise.all([
-      store.dispatch('getPrenext', aid),
-      store.dispatch('getCommentList', aid),
-      store.dispatch('getArticleDetail', aid, store.state.auth.user)
-    ])
+    console.log('fetch.....')
+    try {
+      let result = await Promise.all([
+        store.dispatch('getPrenext', aid),
+        store.dispatch('getCommentList', aid),
+        store.dispatch('getArticleDetail', aid, store.state.auth.user)
+      ])
+    } catch (error) {
+      console.log('error:', error)
+    }
   },
   methods: {
     ...mapActions([

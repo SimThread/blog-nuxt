@@ -110,17 +110,26 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
+    // '@nuxtjs/proxy',
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt'
   ],
   proxy: [
     [
-      '/api',
+      '/dev/api',
       {
         target: 'http://localhost:9000',
         pathRewrite: {
-          '^/api': ''
+          '^/dev/api': ''
+        }
+      }
+    ],
+    [
+      '/online/api',
+      {
+        target: 'http://api.dot2thread.com',
+        pathRewrite: {
+          '^/online/api': ''
         }
       }
     ]
@@ -130,8 +139,8 @@ module.exports = {
   */
   axios: {
     // baseUrl: 'http://localhost:9000',
-    credentials: true
-    // proxy: true
+    credentials: true,
+    proxy: true
     // See https://github.com/nuxt-community/axios-module#options
   },
 

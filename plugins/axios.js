@@ -64,10 +64,9 @@ export default function({ app, req, store, route, redirect }) {
       redirect('/error_404')
       return
     }
-    throw {
-      err,
-      url: '/'
-    }
+
+    console.log('onError:', err)
+
     return err
   })
 }
