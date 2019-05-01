@@ -1,5 +1,10 @@
 <template>
-  <div class="article-box">
+  <div class="article-box">123321
+    <Sidebar>
+      <template>
+        <div v-html="articleDetail.toc"/>
+      </template>
+    </Sidebar>
     <ArtickeContent :article-detail="articleDetail"/>
     <Like 
       :like-count="articleDetail.like_count" 
@@ -21,10 +26,19 @@ import Prenext from '@/components/Article/prenext.vue'
 import Like from '@/components/Article/like.vue'
 import Loginmodal from '@/components/Login/modal.vue'
 import Scrolltop from '@/components/Scrolltop/index.vue'
+import Sidebar from './sidebar.vue'
 import { mapState, mapActions } from 'vuex'
 
 export default {
-  components: { ArtickeContent, Like, Prenext, Comment, Scrolltop, Loginmodal },
+  components: {
+    ArtickeContent,
+    Like,
+    Prenext,
+    Comment,
+    Scrolltop,
+    Loginmodal,
+    Sidebar
+  },
   computed: {
     ...mapState({
       articleDetail: ({ articleDetail }) => articleDetail.item,
@@ -41,6 +55,9 @@ export default {
   },
   created() {
     this.initData()
+  },
+  mounted() {
+    console.log('llllllllllllll')
   },
   methods: {
     ...mapActions([

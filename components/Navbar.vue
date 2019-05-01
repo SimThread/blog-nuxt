@@ -11,7 +11,7 @@
     </div>   
 
     <div class="navbar-expanded">
-      <div>
+      <!-- <div>
         <a 
           class="navbar-item change-mode" 
           href="javascript:;" 
@@ -23,7 +23,7 @@
             v-else 
             class="fa fa-sun-o"/>
         </a>
-      </div>
+      </div> -->
 	        
       <div v-if="auth.token && auth.user">
         <a 
@@ -138,7 +138,9 @@ export default {
     }
   },
   created() {
-    // document.body.className = this.styleMode
+    if (process.browser) {
+      document.body.className = this.styleMode
+    }
 
     if (this.auth.token) {
       this.getUserInfo()

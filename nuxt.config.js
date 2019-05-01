@@ -7,7 +7,10 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    htmlAttrs: {
+      lang: 'zh-hk'
+    },
+    title: '单线程的博客',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,7 +29,7 @@ module.exports = {
   */
   css: [
     'font-awesome/css/font-awesome.css',
-    'jackblog-sass/dist/index.css',
+    // 'jackblog-sass/dist/index.css',
     '~/assets/scss/index.css',
     'vue-toast/dist/vue-toast.min.css',
     '~/assets/styles/index.css'

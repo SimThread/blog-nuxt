@@ -93,7 +93,7 @@ input.ng-valid.ng-dirty {
   border-color: #e78170;
   background-color: #e78170;
 }
-.day-mode .markdown-content, .day-mode .md-preview {
+/* .day-mode .markdown-content, .day-mode .md-preview {
   color: #2f2f2f;
 }
 .day-mode .markdown-content blockquote, .day-mode .md-preview blockquote {
@@ -122,7 +122,7 @@ input.ng-valid.ng-dirty {
 }
 .day-mode .markdown-content ol, .day-mode .md-preview ol {
   list-style-type: decimal;
-}
+} */
 @media (max-width: 767px) {
   .day-mode .navbar-skin {
     background-color: white;
@@ -186,7 +186,7 @@ input.ng-valid.ng-dirty {
   border-color: black;
   background-color: black;
 }
-.night-mode .markdown-content, .night-mode .md-preview {
+/* .night-mode .markdown-content, .night-mode .md-preview {
   color: #b1b1b1;
 }
 .night-mode .markdown-content blockquote, .night-mode .md-preview blockquote {
@@ -215,7 +215,7 @@ input.ng-valid.ng-dirty {
 }
 .night-mode .markdown-content ol, .night-mode .md-preview ol {
   list-style-type: decimal;
-}
+} */
 @media (max-width: 767px) {
   .night-mode .navbar-skin {
     background-color: #3f3f3f;
@@ -582,17 +582,29 @@ input.ng-valid.ng-dirty {
 
 /**********************sidebar***************/
 .sidebar-box {
+  overflow: auto;
   display: none !important;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 45px;
-  padding: 0;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  width: 250px;
+  height: 100%;
+  padding: 40px 20px;
   min-height: 100px;
+  background: #fff;
+  z-index: 1;
+}
+.sidebar-box ul {
+  padding-left: 20px;
+}
+
+.sidebar-box ul:first-child {
+  padding: 0;
 }
 @media (min-width: 768px) {
   .sidebar-box {
@@ -710,7 +722,7 @@ footer {
   margin-right: 10px;
   font-size: 12px;
 }
-.markdown-content, .day-mode .md-preview, .night-mode .md-preview {
+/* .markdown-content, .day-mode .md-preview, .night-mode .md-preview {
   font-size: 16px;
   font-weight: normal;
   line-height: 1.7;
@@ -770,7 +782,7 @@ footer {
   padding: 2px 4px;
   border: none;
   white-space: pre;
-}
+} */
 
 .article-share {
   margin-bottom: 40px;
@@ -1234,5 +1246,4 @@ ul.sort-tags .loader-tiny {
   width: 135px;
   border: 1px solid #d9d9d9;
 }
-
 /*# sourceMappingURL=index.css.map */

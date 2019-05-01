@@ -1,5 +1,10 @@
 <template>
   <div class="article-box">
+    <Sidebar>
+      <template>
+        <div v-html="articleDetail.toc"/>
+      </template>
+    </Sidebar>
     <ArtickeContent :article-detail="articleDetail"/>
     <Like 
       :like-count="articleDetail.like_count" 
@@ -19,6 +24,7 @@ import ArtickeContent from '@/components/Article/content.vue'
 import Comment from '@/components/Article/comment.vue'
 import Prenext from '@/components/Article/prenext.vue'
 import Like from '@/components/Article/like.vue'
+import Sidebar from '@/components/Article/sidebar.vue'
 import Loginmodal from '@/components/Login/modal.vue'
 import Scrolltop from '@/components/Scrolltop/index.vue'
 import { mapState, mapActions } from 'vuex'
@@ -30,7 +36,8 @@ export default {
     Like,
     Prenext,
     Scrolltop,
-    Loginmodal
+    Loginmodal,
+    Sidebar
   },
   computed: {
     ...mapState({
@@ -52,7 +59,6 @@ export default {
   async fetch({ store, params }) {
     const aid = params.aid
 
-    console.log('fetch.....')
     try {
       let result = await Promise.all([
         store.dispatch('getPrenext', aid),

@@ -7,7 +7,7 @@
       <span class="likes-count">喜欢{{ articleDetail.like_count }}</span>
     </div> 
     <div 
-      class="markdown-content" 
+      class="markdown-content markdown-body" 
       v-html="articleDetail.content"/>
   </div>
 </template>

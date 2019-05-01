@@ -250,7 +250,7 @@ input.ng-valid.ng-dirty {
   @extend %fontOne;
   @include styleMode($baseFontColor,$baseBorderColor,$baseBgColor,$linkBaseColor,$linkBaseHoverColor,$linkTitleColor,$linkTitleHoverColor,$linkLightColor,$linkLightHoverColor);
   @include tagStyle($tagBdColor,$tagBgColor,$tagActiveColor,$tagActiveBgColor);
-  @include markdownStyle($mdFontColor,$mdLinkColor,$mdLinkHColor,$mdCodeColor,$mdCodeBgColor,$mdQuoteBdColor,$mdQuoteBdLeftColor,$mdQuoteBgColor);
+  // @include markdownStyle($mdFontColor,$mdLinkColor,$mdLinkHColor,$mdCodeColor,$mdCodeBgColor,$mdQuoteBdColor,$mdQuoteBdLeftColor,$mdQuoteBgColor);
   @include navbarStyle($baseBgColor,$navShadowColor,white,black,$navHoverBgColor);
   a.weibo,a.qq,a.github,a.google,a.wechat{background-color:$snsBgColor;}
 }
@@ -258,7 +258,7 @@ input.ng-valid.ng-dirty {
   @extend %fontOne;
   @include styleMode($nightFontColor,$nightBorderColor,$nightBgColor,$nightLinkBaseColor,$nightLinkBaseHoverColor,$nightLinkTitleColor,$nightLinkTitleHoverColor,$nightLinkLightColor,$nightLinkLightHoverColor);
   @include tagStyle($nightTagBdColor,$nightTagBgColor,$nightTagActiveColor,$nightTagActiveBgColor);
-  @include markdownStyle($nightMdFontColor,$nightMdLinkColor,$nightMdLinkHColor,$nightMdCodeColor,$nightMdCodeBgColor,$nightMdQuoteBdColor,$nightMdQuoteBdLeftColor,$nightMdQuoteBgColor);
+  // @include markdownStyle($nightMdFontColor,$nightMdLinkColor,$nightMdLinkHColor,$nightMdCodeColor,$nightMdCodeBgColor,$nightMdQuoteBdColor,$nightMdQuoteBdLeftColor,$nightMdQuoteBgColor);
   @include navbarStyle($nightBgColor,$nightNavShadowColor,gray,gray,black);
   @include formStyle();
   a.weibo,a.qq,a.github,a.google,a.wechat{background-color:$nightSnsBgColor;}
