@@ -606,6 +606,10 @@ input.ng-valid.ng-dirty {
 .sidebar-box ul:first-child {
   padding: 0;
 }
+.sidebar-box ul a {
+  font-size: 13px;
+  color: #e78170;
+}
 @media (min-width: 768px) {
   .sidebar-box {
     display: block !important;
@@ -701,6 +705,9 @@ footer {
   padding: 60px 10px 10px;
 }
 @media (min-width: 768px) {
+  .article-wrap {
+    margin-left: 250px;
+  }
   .article-box {
     width: 700px;
     padding: 20px 0 10px 45px;
@@ -785,6 +792,7 @@ footer {
 } */
 
 .article-share {
+  margin-top: 20px;
   margin-bottom: 40px;
 }
 a.like-btn {
