@@ -56,9 +56,7 @@ export default {
   created() {
     this.initData()
   },
-  mounted() {
-    console.log('llllllllllllll')
-  },
+  mounted() {},
   methods: {
     ...mapActions([
       'getArticleDetail',

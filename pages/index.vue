@@ -41,23 +41,21 @@ export default {
     })
   },
   async fetch({ store }) {
+    console.log('fetch...........')
+    console.log('items:', store.state.articleList.items)
     const queue = []
 
-    if (store.state.globalVal.indexImg === '') {
-      queue.push(store.dispatch('getIndexImage'))
-    }
-    if (store.state.tagList.items.length < 1) {
-      queue.push(store.dispatch('getTagList'))
-    }
-    if (store.state.articleList.items.length < 1) {
-      queue.push(
-        store.dispatch('getArticleList', { options: store.state.options.item })
-      )
-    }
+    queue.push(store.dispatch('getIndexImage'))
+    queue.push(store.dispatch('getTagList'))
+    queue.push(
+      store.dispatch('getArticleList', { options: store.state.options.item })
+    )
 
     await Promise.all(queue)
   },
   mounted() {
+    console.log('mounted')
+    console.log('this.articleList:', this.articleList)
     if (this.indexImg === '') {
       this.getIndexImage()
     }

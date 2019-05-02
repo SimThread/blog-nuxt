@@ -6,7 +6,6 @@ export default function({ app, req, store, route, redirect }) {
 
   $axios.onRequest(config => {
     if (isLogin()) {
-      console.log('已登录')
       config.headers.common.Authorization =
         'Bearer ' + getCookie('token').replace(/(^\")|(\"$)/g, '')
     }
@@ -59,6 +58,7 @@ export default function({ app, req, store, route, redirect }) {
   })
 
   $axios.onError(err => {
+    console.log(JSON.stringify(err))
     const code = Number.parseInt(err.response && err.response.status)
     if (code == 404) {
       redirect('/error_404')

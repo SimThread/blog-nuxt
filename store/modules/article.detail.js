@@ -29,7 +29,6 @@ const actions = {
           return resolve()
         }
 
-        console.log('getFrontArticle response:', response)
         return reject()
       })
     })

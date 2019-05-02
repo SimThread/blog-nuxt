@@ -4,7 +4,7 @@
       :class=" isLike ? 'note-liked' :'' " 
       href="javascript:;" 
       class="like-btn" 
-      @click.prevent="toggleLike()">
+      @click.prevent="toggleLike($route.params.id)">
       <span class="like-content">
         <i 
           :class="isLike ? 'fa-heart' : 'fa-heart-o'" 
@@ -27,8 +27,8 @@ export default {
     }
   },
   methods: {
-    toggleLike() {
-      this.$parent.handleToggleLike()
+    toggleLike(id) {
+      this.$parent.handleToggleLike(id)
     }
   }
 }

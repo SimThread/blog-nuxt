@@ -34,8 +34,8 @@ export default {
   getFrontArticle(id) {
     return apiClient.get(`${API_ROOT}/article/${id}/getFrontArticle`)
   },
-  toggleLike() {
-    return apiClient.put(`${API_ROOT}/article/toggleLike`)
+  toggleLike(id) {
+    return apiClient.put(`${API_ROOT}/article/${id}/toggleLike`)
   },
   getPrenext(id, options) {
     return apiClient.get(`${API_ROOT}/article/${id}/getPrenext`, {

@@ -18,6 +18,7 @@ const actions = {
     commit(REQUEST_ARTICLE_LIST)
     service.getFrontArticleList(options).then(
       response => {
+        console.log('response.data:', response.data)
         if (response.statusText != 'OK') {
           return commit(GET_ARTICLE_LIST_FAILURE)
         }
