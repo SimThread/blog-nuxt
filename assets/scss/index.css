@@ -795,7 +795,7 @@ footer {
   margin-top: 20px;
   margin-bottom: 40px;
 }
-a.like-btn {
+.like-btn {
   display: block;
   position: relative;
   float: left;
@@ -814,8 +814,9 @@ a.like-btn {
   -o-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  cursor: pointer;
 }
-a.like-btn .like-content {
+.like-btn .like-content {
   display: inline-block;
   position: absolute;
   left: 0;
@@ -824,7 +825,7 @@ a.like-btn .like-content {
   vertical-align: middle;
   padding-right: 10px;
 }
-a.like-btn .like-count {
+.like-btn .like-count {
   display: inline-block;
   position: absolute;
   right: 0;
@@ -833,7 +834,7 @@ a.like-btn .like-count {
   vertical-align: middle;
   border-left: 1px solid;
 }
-a.like-btn:hover {
+.like-btn:hover {
   color: #e78170;
   background: #f6cec7;
   border-color: #f6cec7;

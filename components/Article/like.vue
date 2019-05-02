@@ -1,8 +1,7 @@
 <template>
   <div class="article-share clearfix">
-    <a 
+    <div
       :class=" isLike ? 'note-liked' :'' " 
-      href="javascript:;" 
       class="like-btn" 
       @click="toggleLike($route.params.id)">
       <span class="like-content">
@@ -11,7 +10,7 @@
           class="fa"/>  喜欢
       </span>
       <span class="like-count">{{ likeCount }}</span>        
-    </a>
+    </div>
   </div>
 </template>
 <script>
