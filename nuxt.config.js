@@ -127,6 +127,15 @@ module.exports = {
         }
       }
     ],
+    // [
+    //   '/online/api',
+    //   {
+    //     target: 'http://api.dot2thread.com',
+    //     pathRewrite: {
+    //       '^/online/api': ''
+    //     }
+    //   }
+    // ],
     [
       '/online/api',
       {
