@@ -139,7 +139,7 @@ module.exports = {
     [
       '/online/api',
       {
-        target: 'http://api.dot2thread.com',
+        target: '//localhost:8800',
         pathRewrite: {
           '^/online/api': ''
         }
