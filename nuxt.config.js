@@ -139,7 +139,7 @@ module.exports = {
     [
       '/online/api',
       {
-        target: '//localhost:8800',
+        target: '//39.106.73.251:8800',
         pathRewrite: {
           '^/online/api': ''
         }
