@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="footer-container">
+    <!-- <div class="footer-container">
       <ul>
         <li>
           <span>©2018 / <a 
@@ -25,7 +25,7 @@
           </a>
         </li>
       </ul>
-    </div>
+    </div> -->
   </footer>
 </template>
 
