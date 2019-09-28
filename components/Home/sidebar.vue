@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-3 sidebar-box">
-    <div 
-      :style="{ backgroundImage: 'url(' + indexImg + ')' }" 
+    <div
+      :style="{ backgroundImage: 'url(' + indexImg + ')' }"
       class="cover-img"/>
     <div class="bottom-block">
       <h3>但行好事</h3>
@@ -11,11 +11,11 @@
 </template>
 <script>
 export default {
-  props: {
-    indexImg: {
-      type: String,
-      default: () => ''
+    props: {
+        indexImg: {
+            type: String,
+            default: () => ''
+        }
     }
-  }
-}
+};
 </script>

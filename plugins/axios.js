@@ -1,29 +1,28 @@
-import qs from 'qs'
-import { getCookie, signOut, isLogin } from '@/utils/authService'
+import { getCookie, isLogin } from '@/utils/authService';
 
-export default function({ app, req, store, route, redirect }) {
-  let $axios = app.$axios
+export default function ({ app, redirect }) {
+    const $axios = app.$axios;
 
-  $axios.onRequest(config => {
-    if (isLogin()) {
-      config.headers.common.Authorization =
-        'Bearer ' + getCookie('token').replace(/(^\")|(\"$)/g, '')
-    }
-    // config.data = qs.stringify(config.data, {
-    //   allowDots: true //Option allowDots can be used to enable dot notation
-    // })
-    // if (config.method.toUpperCase() == 'GET' && config.data) {
-    //   config.url += `?${config.data}`
-    // }
-    // console.log('config:', config)
-    return config
+    $axios.onRequest((config) => {
+        if (isLogin()) {
+            config.headers.common.Authorization =
+        'Bearer ' + getCookie('token').replace(/(^")|("$)/g, '');
+        }
+        // config.data = qs.stringify(config.data, {
+        //   allowDots: true //Option allowDots can be used to enable dot notation
+        // })
+        // if (config.method.toUpperCase() == 'GET' && config.data) {
+        //   config.url += `?${config.data}`
+        // }
+        // console.log('config:', config)
+        return config;
 
     // if (store.state.im.uuid){
     //   config.headers.im_client = 'web';
     //   config.headers.im_uuid = store.state.im.uuid;
     // }
-  })
-  $axios.onResponse(response => {
+    });
+    $axios.onResponse((response) => {
     // if (response.status == 200) {
     //   if (401 == response.data.code) { //用户过期
     //     console.log('axios用户过期');
@@ -50,23 +49,23 @@ export default function({ app, req, store, route, redirect }) {
     // } else {
     //   return response;
     // }
-    if (response.status == 404) {
-      app.router.push({ name: 'error_404' })
-      return
-    }
-    return response
-  })
+        if (response.status === 404) {
+            app.router.push({ name: 'error_404' });
+            return;
+        }
+        return response;
+    });
 
-  $axios.onError(err => {
-    console.log(JSON.stringify(err))
-    const code = Number.parseInt(err.response && err.response.status)
-    if (code == 404) {
-      redirect('/error_404')
-      return
-    }
+    $axios.onError((err) => {
+        console.log(JSON.stringify(err));
+        const code = Number.parseInt(err.response && err.response.status);
+        if (code === 404) {
+            redirect('/error_404');
+            return;
+        }
 
-    console.log('onError:', err)
+        console.log('onError:', err);
 
-    return err
-  })
+        return err;
+    });
 }

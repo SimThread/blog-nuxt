@@ -6,9 +6,9 @@
   </div>
 </template>
 <script>
-import Navbar from '@/components/Navbar'
-import Toaster from '@/components/Toaster'
+import Navbar from '@/components/Navbar';
+import Toaster from '@/components/Toaster';
 export default {
-  components: { Navbar, Toaster }
-}
+    components: { Navbar, Toaster }
+};
 </script>

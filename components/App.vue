@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import store from 'store'
-import Navbar from './Navbar'
-import Toaster from './Toaster'
+import store from 'store';
+import Navbar from './Navbar';
+import Toaster from './Toaster';
 
 export default {
-  store,
-  components: { Navbar, Toaster }
-}
+    store,
+    components: { Navbar, Toaster }
+};
 </script>

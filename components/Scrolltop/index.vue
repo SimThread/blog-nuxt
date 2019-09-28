@@ -1,32 +1,32 @@
 <template>
-  <div 
-    v-show="isShowTop" 
-    class="gotop" 
+  <div
+    v-show="isShowTop"
+    class="gotop"
     @click.prevent="gotop">
     <i class="fa fa-arrow-up"/>
   </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      isShowTop: false
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll() {
-      if (window.scrollY > 200) {
-        this.isShowTop = true
-      } else {
-        this.isShowTop = false
-      }
+    data () {
+        return {
+            isShowTop: false
+        };
     },
-    gotop() {
-      window.scrollTo(0, 0)
+    mounted () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll () {
+            if (window.scrollY > 200) {
+                this.isShowTop = true;
+            } else {
+                this.isShowTop = false;
+            }
+        },
+        gotop () {
+            window.scrollTo(0, 0);
+        }
     }
-  }
-}
+};
 </script>

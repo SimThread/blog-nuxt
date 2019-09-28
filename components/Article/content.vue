@@ -5,19 +5,19 @@
       <span class="views-count">阅读{{ articleDetail.visit_count }}</span>
       <span class="comments-count">评论{{ articleDetail.comment_count }}</span>
       <span class="likes-count">喜欢{{ articleDetail.like_count }}</span>
-    </div> 
-    <div 
-      class="markdown-content markdown-body" 
+    </div>
+    <div
+      class="markdown-content markdown-body"
       v-html="articleDetail.content"/>
   </div>
 </template>
 <script>
 export default {
-  props: {
-    articleDetail: {
-      type: Object,
-      default: () => {}
+    props: {
+        articleDetail: {
+            type: Object,
+            default: () => {}
+        }
     }
-  }
-}
+};
 </script>

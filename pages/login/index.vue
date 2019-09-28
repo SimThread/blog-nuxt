@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import Login from '@/components/Login/index.vue'
+import Login from '@/components/Login/index.vue';
 export default {
-  components: {
-    Login
-  }
-}
+    components: {
+        Login
+    }
+};
 </script>
