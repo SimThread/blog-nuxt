@@ -45,7 +45,7 @@ import { mapState, mapActions } from 'vuex';
 export default {
     computed: {
         ...mapState({
-            apps: ({ apps }) => apps.items
+             apps: ({ apps }) => apps.items
         })
     },
     fetch ({ store }) {
