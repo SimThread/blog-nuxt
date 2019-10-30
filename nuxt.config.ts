@@ -127,19 +127,10 @@ export default {
                 }
             }
         ],
-        // [
-        //   '/online/api',
-        //   {
-        //     target: 'http://api.dot2thread.com',
-        //     pathRewrite: {
-        //       '^/online/api': ''
-        //     }
-        //   }
-        // ],
         [
             '/online/api',
             {
-                target: 'http://39.106.73.251:8800',
+                target: 'http://api.dot2thread.com',
                 pathRewrite: {
                     '^/online/api': ''
                 }
