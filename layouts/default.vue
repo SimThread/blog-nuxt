@@ -1,9 +1,9 @@
 <template>
-  <div class="top-box">
-    <Navbar/>
-    <nuxt/>
-    <Toaster/>
-  </div>
+    <div class="top-box">
+        <Navbar/>
+        <nuxt/>
+        <Toaster/>
+    </div>
 </template>
 <script>
 import Navbar from '@/components/Navbar';

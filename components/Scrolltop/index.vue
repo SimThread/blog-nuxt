@@ -1,10 +1,10 @@
 <template>
-  <div
-    v-show="isShowTop"
-    class="gotop"
-    @click.prevent="gotop">
-    <i class="fa fa-arrow-up"/>
-  </div>
+    <div
+        v-show="isShowTop"
+        class="gotop"
+        @click.prevent="gotop">
+        <i class="fa fa-arrow-up"/>
+    </div>
 </template>
 <script>
 export default {

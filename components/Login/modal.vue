@@ -1,23 +1,23 @@
 <template>
-  <b-modal
-    v-model="showLoginModal"
-    :hide-footer="true"
-    effect="fade"
-    width="400">
-    <h4
-      slot="modal-header"
-      class="modal-title text-center"
-      style="font-size: 18px; width: 100%;">请用以下方式登录</h4>
-    <div
-      class="modal-body">
-      <div class="portlet-body">
-        <snsloginbtns :logins="logins"/>
-      </div>
-    </div>
+    <b-modal
+        v-model="showLoginModal"
+        :hide-footer="true"
+        effect="fade"
+        width="400">
+        <h4
+            slot="modal-header"
+            class="modal-title text-center"
+            style="font-size: 18px; width: 100%;">请用以下方式登录</h4>
+        <div
+            class="modal-body">
+            <div class="portlet-body">
+                <snsloginbtns :logins="logins"/>
+            </div>
+        </div>
     <!-- <div
       slot="modal-footer"
       style="display: none;"/> -->
-  </b-modal>
+    </b-modal>
 </template>
 
 <script>

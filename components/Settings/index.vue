@@ -1,40 +1,40 @@
 <template>
-  <div class="settings-box">
-    <div class="settings-container">
-      <h2 class="title">设置</h2>
-      <hr >
-      <div class="profile">
-        <!-- 呢称邮件-->
-        <div
-          id="settingsForm"
-          class="control-group">
-          <form
-            class="settings-form"
-            novalidate
-            @submit.prevent="mdUser()">
-            <div class="form-group">
-              <div class="form-group">
-                <label class="control-label">昵称</label>
-                <input
-                  v-validate="'required|nickname|min:4|max:30'"
-                  v-model="newNickname"
-                  type="text"
-                  name="nickname"
-                  class="form-control"
-                  placeholder="2-15字符，中英文、数字和下划线">
-              </div>
+    <div class="settings-box">
+        <div class="settings-container">
+            <h2 class="title">设置</h2>
+            <hr >
+            <div class="profile">
+                <!-- 呢称邮件-->
+                <div
+                    id="settingsForm"
+                    class="control-group">
+                    <form
+                        class="settings-form"
+                        novalidate
+                        @submit.prevent="mdUser()">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label">昵称</label>
+                                <input
+                                    v-validate="'required|nickname|min:4|max:30'"
+                                    v-model="newNickname"
+                                    type="text"
+                                    name="nickname"
+                                    class="form-control"
+                                    placeholder="2-15字符，中英文、数字和下划线">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button
+                                type="submit"
+                                class="btn btn-block btn-lg btn-primary">保 存</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-              <button
-                type="submit"
-                class="btn btn-block btn-lg btn-primary">保 存</button>
-            </div>
-          </form>
+            <!-- content 结束 -->
         </div>
-      </div>
-      <!-- content 结束 -->
     </div>
-  </div>
 </template>
 
 <script>

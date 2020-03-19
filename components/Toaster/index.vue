@@ -1,5 +1,5 @@
 <template>
-  <vue-toast ref="toast"/>
+    <vue-toast ref="toast"/>
 </template>
 
 <script>

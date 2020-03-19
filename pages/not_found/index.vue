@@ -1,5 +1,5 @@
 <template>
-  <p class="not">404, 页面没有发现.</p>
+    <p class="not">404, 页面没有发现.</p>
 </template>
 <script>
 export default {};

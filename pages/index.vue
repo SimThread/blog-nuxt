@@ -1,24 +1,24 @@
 <template>
-  <div>
-    <div class="container-fluid main-box">
-      <div class="row">
-        <Sidebar :index-img="indexImg"/>
-        <div class="col-sm-7 offset-sm-3 main-content">
-          <Tags
-            :tag-list="tagList"
-            :options="options"
-            :is-fetching="isFetching"/>
-          <Articles :article-list="articleList"/>
-          <Loadmore
-            v-if="articleList.length > 0 && isMore"
-            :options="options"
-            :is-more="isMore"
-            :is-fetching="isFetching"/>
+    <div>
+        <div class="container-fluid main-box">
+            <div class="row">
+                <Sidebar :index-img="indexImg"/>
+                <div class="col-sm-7 offset-sm-3 main-content">
+                    <Tags
+                        :tag-list="tagList"
+                        :options="options"
+                        :is-fetching="isFetching"/>
+                    <Articles :article-list="articleList"/>
+                    <Loadmore
+                        v-if="articleList.length > 0 && isMore"
+                        :options="options"
+                        :is-more="isMore"
+                        :is-fetching="isFetching"/>
+                </div>
+            </div>
         </div>
-      </div>
+        <Footerbar/>
     </div>
-    <Footerbar/>
-  </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex';

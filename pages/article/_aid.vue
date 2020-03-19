@@ -1,25 +1,25 @@
 <template>
-  <div class="article-wrap">
-    <div class="article-box">
-      <Sidebar>
-        <template>
-          <div v-html="articleDetail.toc"/>
-        </template>
-      </Sidebar>
-      <ArtickeContent :article-detail="articleDetail"/>
-      <Like
-        :like-count="articleDetail.like_count"
-        :is-like="articleDetail.isLike"/>
-      <Prenext
-        :prev-article="prevArticle"
-        :next-article="nextArticle"/>
-      <Comment
-        :comment-list="commentList"
-        :user="user"/>
-      <Loginmodal ref="modal"/>
-      <Scrolltop/>
+    <div class="article-wrap">
+        <div class="article-box">
+            <Sidebar>
+                <template>
+                    <div v-html="articleDetail.toc"/>
+                </template>
+            </Sidebar>
+            <ArtickeContent :article-detail="articleDetail"/>
+            <Like
+                :like-count="articleDetail.like_count"
+                :is-like="articleDetail.isLike"/>
+            <Prenext
+                :prev-article="prevArticle"
+                :next-article="nextArticle"/>
+            <Comment
+                :comment-list="commentList"
+                :user="user"/>
+            <Loginmodal ref="modal"/>
+            <Scrolltop/>
+        </div>
     </div>
-  </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex';

@@ -1,9 +1,9 @@
 <template>
-  <div
-    id="sidebar-box"
-    class="sidebar-box">
-    <slot/>
-  </div>
+    <div
+        id="sidebar-box"
+        class="sidebar-box">
+        <slot/>
+    </div>
 </template>
 <script>
 export default {

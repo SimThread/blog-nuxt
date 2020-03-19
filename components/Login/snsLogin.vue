@@ -1,16 +1,16 @@
 <template>
-  <div class="login-sns">
-    <ul>
-      <li
-        v-for="(item,index) in logins"
-        :key="index"
-        @click.stop.prevent="snsLogin(item)">
-        <a
-          :class="item"
-          href="#"><i :class="'fa fa-' + item"/></a>
-      </li>
-    </ul>
-  </div>
+    <div class="login-sns">
+        <ul>
+            <li
+                v-for="(item,index) in logins"
+                :key="index"
+                @click.stop.prevent="snsLogin(item)">
+                <a
+                    :class="item"
+                    href="#"><i :class="'fa fa-' + item"/></a>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>

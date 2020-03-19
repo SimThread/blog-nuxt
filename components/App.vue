@@ -1,9 +1,9 @@
 <template>
-  <div class="top-box">
-    <Navbar/>
-    <router-view/>
-    <Toaster/>
-  </div>
+    <div class="top-box">
+        <Navbar/>
+        <router-view/>
+        <Toaster/>
+    </div>
 </template>
 
 <script>
